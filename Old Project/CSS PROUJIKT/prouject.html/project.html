@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kidCalc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme1">
+    <div class="register-container">
+        <h2>تسجيل</h2>
+        <input type="text" id="reg-name" placeholder="الاسم">
+        <input type="number" id="reg-age" placeholder="العمر">
+        <select id="reg-theme" onchange="changeTheme()">
+            <option value="theme1">الفضاء</option>
+            <option value="theme2">الديناصورات</option>
+            <option value="theme3">السيارات</option>
+        </select>
+        <button onclick="registerUser()">إرسال</button>
+    </div>
+    
+    <div class="info-bar">
+        <h3 id="welcome-message">مرحبًا!</h3>
+        <p>عدد الإجابات الصحيحة: <span id="correct-count">0</span></p>
+    </div>
+
+    <div class="container">
+        <h2>kidCalc</h2>
+        <div id="expression">&nbsp;</div>
+        <div class="buttons">
+            <button onclick="addToExpression('1')">1</button>
+            <button onclick="addToExpression('2')">2</button>
+            <button onclick="addToExpression('3')">3</button>
+            <button onclick="addToExpression('+')">+</button>
+            <button onclick="addToExpression('4')">4</button>
+            <button onclick="addToExpression('5')">5</button>
+            <button onclick="addToExpression('6')">6</button>
+            <button onclick="addToExpression('-')">-</button>
+            <button onclick="addToExpression('7')">7</button>
+            <button onclick="addToExpression('8')">8</button>
+            <button onclick="addToExpression('9')">9</button>
+            <button onclick="addToExpression('>')">></button>
+            <button onclick="addToExpression('0')">0</button>
+            <button onclick="addToExpression('<')"><</button>
+            <button onclick="addToExpression('=')">=</button>
+            <button onclick="clearExpression()">مسح</button>
+        </div>
+        <button onclick="checkAnswer()">إرسال</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function changeTheme() {
+            let selectedTheme = document.getElementById("reg-theme").value;
+            document.body.className = selectedTheme;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
