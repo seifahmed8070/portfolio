@@ -35,16 +35,16 @@ function type() {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
+// عشان نربط الزرار بالحدث (Click)
 themeToggle.addEventListener('click', () => {
+    // التبديل بين الكلاس الأساسي والوضع الليلي
     body.classList.toggle('dark-mode');
     
-    // تغيير الأيقونة بين شمس وقمر
+    // تغيير الأيقونة بين القمر والشمس
     if (body.classList.contains('dark-mode')) {
-        themeToggle.classList.remove('fa-moon');
-        themeToggle.classList.add('fa-sun');
+        themeToggle.className = 'fas fa-sun'; // شمس في الوضع الليلي
     } else {
-        themeToggle.classList.remove('fa-sun');
-        themeToggle.classList.add('fa-moon');
+        themeToggle.className = 'fas fa-moon'; // قمر في الوضع الفاتح
     }
 });
 
