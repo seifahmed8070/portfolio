@@ -32,7 +32,6 @@
 
     <section id="about" class="hero hidden">
         <div class="hero-content">
-            <!-- شارة التفرغ الاحترافية -->
             <div class="availability-badge">
                 <span class="pulse-dot"></span> Available for Opportunities
             </div>
@@ -48,10 +47,10 @@
                 <a href="mailto:seifahmed8070@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
 
+            <!-- الأزرار بالتصميم واللون الجديد -->
             <div class="hero-buttons">
-                <a href="#projects" class="btn pulse-btn">View My Work</a>
-                <!-- زرار الـ CV الحقيقي (تأكد أنك رفعت ملف باسم cv.pdf في نفس المجلد) -->
-                <a href="cv.pdf" download="Seif_Ahmed_CV.pdf" class="btn btn-outline" id="cv-btn">Download CV</a>
+                <a href="#projects" class="btn btn-neon">View My Work <i class="fas fa-arrow-right"></i></a>
+                <a href="cv.pdf" download="Seif_Ahmed_CV.pdf" class="btn btn-glass">Download CV <i class="fas fa-download"></i></a>
             </div>
         </div>
     </section>
@@ -69,14 +68,33 @@
         </div>
     </section>
 
+    <!-- قسم المهارات بنمط مختلف (المهارات الحالية والمهارات القادمة) -->
     <section id="skills" class="skills hidden">
-        <h2>My <span class="gradient-text">Skills</span></h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fab fa-python floating"></i><span>Python</span></div>
-            <div class="skill-card"><i class="fab fa-html5 floating"></i><span>HTML5</span></div>
-            <div class="skill-card"><i class="fab fa-css3-alt floating"></i><span>CSS3</span></div>
-            <div class="skill-card"><i class="fab fa-js floating"></i><span>JavaScript</span></div>
-            <div class="skill-card"><i class="fab fa-git-alt floating"></i><span>Git & GitHub</span></div>
+        <h2>My <span class="gradient-text">Skills & Roadmap</span></h2>
+        <p style="text-align: center; margin-bottom: 20px;">What I use now, and what I am eager to master next.</p>
+        
+        <div class="skills-container">
+            <!-- المهارات الحالية -->
+            <div class="skills-category">
+                <h3>Core Stack</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-python floating"></i><span>Python</span></div>
+                    <div class="skill-card"><i class="fab fa-html5 floating"></i><span>HTML5</span></div>
+                    <div class="skill-card"><i class="fab fa-css3-alt floating"></i><span>CSS3</span></div>
+                    <div class="skill-card"><i class="fab fa-js floating"></i><span>JavaScript</span></div>
+                    <div class="skill-card"><i class="fab fa-git-alt floating"></i><span>Git & GitHub</span></div>
+                </div>
+            </div>
+
+            <!-- المهارات القادمة (تحت الإعداد) -->
+            <div class="skills-category" style="margin-top: 40px;">
+                <h3 style="color: var(--text-muted);">Learning Next (Roadmap)</h3>
+                <div class="skills-grid">
+                    <div class="skill-card upcoming"><i class="fas fa-database"></i><span>Databases & SQL</span><span class="badge-soon">Soon</span></div>
+                    <div class="skill-card upcoming"><i class="fab fa-react"></i><span>React.js</span><span class="badge-soon">Soon</span></div>
+                    <div class="skill-card upcoming"><i class="fas fa-brain"></i><span>Data Structures</span><span class="badge-soon">Soon</span></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -123,8 +141,13 @@
     <section id="contact" class="contact hidden">
         <h2>Get In <span class="gradient-text">Touch</span></h2>
         <p>Feel free to reach out for collaborations or inquiries!</p>
-        <a href="mailto:seifahmed8070@gmail.com" class="btn pulse-btn">Send Email</a>
+        <a href="mailto:seifahmed8070@gmail.com" class="btn btn-neon" style="margin-top: 15px;">Send Email <i class="fas fa-paper-plane"></i></a>
     </section>
+
+    <!-- زر رسالة ثابت (عائم زي الشات بوت) في زاوية الشاشة -->
+    <a href="mailto:seifahmed8070@gmail.com" class="floating-chat-btn" title="Send me a message!">
+        <i class="fas fa-comment-dots"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
