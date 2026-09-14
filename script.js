@@ -52,11 +52,7 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenElements.forEach((el) => observer.observe(el));
 
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, 1000);
-});
-
-// وظيفة فتح وغلق تكبير الشهادة في نفس الصفحة
+// وظائف فتح وغلق نافذة الشهادة
 function openModal() {
     const modal = document.getElementById("certModal");
     modal.style.display = "block";
@@ -66,3 +62,7 @@ function closeModal() {
     const modal = document.getElementById("certModal");
     modal.style.display = "none";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 1000);
+});
