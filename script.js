@@ -1,6 +1,5 @@
 // Typing Effect for Header
-const words = ["Python Developer", "Web Developer", "Problem Solver"];
-let wordIndex = 0;
+const words = ["Computer Science Student @ Ain Shams University", "Web & Python Developer"];ypdatelet wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const typingElement = document.querySelector('.typing-text');
