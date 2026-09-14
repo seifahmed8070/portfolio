@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="themeStylesheet" rel="stylesheet" href="assets/css/style.css">
+    <title>kidCalc</title>
+</head>
+<body>
+
+  <div class="hbage"> 
+    <div class="info-bar">
+        <h3 id="welcome-message">مرحبًا!</h3>
+        <p>عدد الإجابات الصحيحة: <span id="correct-count">0</span></p>
+        <p>عدد المحاولات: <span id="attempt-count">0</span></p>
+        <p>التقييم: <span id="rating">N/A</span></p>
+    </div>
+
+    <div class="register-container" id="register-section">
+        <h2>تسجيل</h2>
+        <input type="text" id="reg-name" placeholder="الاسم">
+        <input type="number" id="reg-age" placeholder="العمر">
+        <select id="reg-theme">
+            <option value="assets/css/them1.css">الفضاء</option>
+            <option value="assets/css/them2.css">الديناصورات</option>
+            <option value="assets/css/them3.css">السيارات</option>
+        </select>
+        <button onclick="registerUser()">إرسال</button>
+    </div>
+    
+    <div class="container" id="calculator-section" style="display: none;">
+        <h2>kidCalc</h2>
+        <div id="expression">&nbsp;</div>
+        <input type="text" id="answer" placeholder="اكتب إجابتك هنا">
+        <div class="buttons">
+            <button onclick="addToExpression('1')">1</button>
+            <button onclick="addToExpression('2')">2</button>
+            <button onclick="addToExpression('3')">3</button>
+            <button onclick="addToExpression('+')">+</button>
+            <button onclick="addToExpression('4')">4</button>
+            <button onclick="addToExpression('5')">5</button>
+            <button onclick="addToExpression('6')">6</button>
+            <button onclick="addToExpression('-')">-</button>
+            <button onclick="addToExpression('7')">7</button>
+            <button onclick="addToExpression('8')">8</button>
+            <button onclick="addToExpression('9')">9</button>
+            <button onclick="addToExpression('>')">></button>
+            <button onclick="addToExpression('0')">0</button>
+            <button onclick="clearExpression()">مسح</button>
+            <button onclick="checkAnswer()">إرسال</button>
+            <button onclick="addToExpression('<')">&lt</button>
+        </div>
+        <div id="result"></div>
+    </div>
+</div>
+    
+<script>
+    let expression = "";
+    let correctCount = 0;
+    let attemptCount = 0;
+
+    function addToExpression(value) {
+        expression += value;
+        document.getElementById("expression").innerText = expression;
+    }
+
+    function clearExpression() {
+        expression = "";
+        document.getElementById("expression").innerText = " ";
+        document.getElementById("result").innerText = "";
+    }
+
+    function checkAnswer() {
+        let userAnswer = document.getElementById("answer").value.trim();
+        
+        if (userAnswer === "") {
+            document.getElementById("result").innerText = "برجاء إدخال الإجابة";
+            return;
+        }
+
+        attemptCount++;
+
+        try {
+            if (!/^\d+(\s*[\+\-\*\/]\s*\d+)*$/.test(expression)) {
+                throw new Error("معادلة غير صحيحة");
+            }
+
+            let correctAnswer = Function(`"use strict"; return (${expression})`)();
+
+            if (parseFloat(userAnswer) === correctAnswer) {
+                document.getElementById("result").innerText = "عمل رائع!";
+                correctCount++;
+            } else {
+                document.getElementById("result").innerText = "حاول مرة أخرى";
+            }
+        } catch (e) {
+            document.getElementById("result").innerText = "معادلة غير صحيحة";
+        }
+
+        updateInfoBar();
+    }
+
+    function registerUser() {
+        let name = document.getElementById("reg-name").value.trim();
+        let age = document.getElementById("reg-age").value.trim();
+        let selectedTheme = document.getElementById("reg-theme").value;
+
+        if (!name || !age) {
+            alert("الرجاء إدخال الاسم والعمر قبل المتابعة!");
+            return;
+        }
+
+        document.getElementById("welcome-message").innerText = `مرحبًا, ${name}!`;
+        changeTheme(selectedTheme);
+
+        document.getElementById("register-section").style.display = "none";
+        document.getElementById("calculator-section").style.display = "block";
+    }
+
+    function changeTheme(theme) {
+        document.getElementById("themeStylesheet").href = theme;
+    }
+
+    function updateInfoBar() {
+        document.getElementById("correct-count").innerText = correctCount;
+        document.getElementById("attempt-count").innerText = attemptCount;
+        let rating = attemptCount > 0 ? ((correctCount / attemptCount) * 100).toFixed(1) + "%" : "N/A";
+        document.getElementById("rating").innerText = rating;
+    }
+</script>
+
+</body>
+</html>
