@@ -11,14 +11,14 @@
 }
 
 .dark-mode {
-    --bg-color: #09359b;
-    --card-bg: #49699b;
+    --bg-color: #ec1414;
+    --card-bg: #11d83c;
     --text-color: #f8fafc;
     --text-muted: #94a3b8;
     --primary-color: #38bdf8;
     --gradient-start: #38bdf8;
     --gradient-end: #818cf8;
-    --nav-bg: rgba(15, 23, 42, 0.95);
+    --nav-bg: rgba(59, 94, 173, 0.95);
     --shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
