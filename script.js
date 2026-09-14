@@ -1,5 +1,4 @@
-// 1. الأنيميشن بتاع كتابة الكلام
-const words = ["Computer Science Student @ Ain Shams", "Web & Python Developer"];
+const words = ["Computer Science Student", "Python Developer", "Tech Enthusiast"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -31,37 +30,28 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-// 2. زرار الوضع الليلي (Dark Mode)
-const themeToggle = document.getElementById('theme-toggle');
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const body = document.body;
 
-// عشان نربط الزرار بالحدث (Click)
-themeToggle.addEventListener('click', () => {
-    // التبديل بين الكلاس الأساسي والوضع الليلي
-    body.classList.toggle('dark-mode');
-    
-    // تغيير الأيقونة بين القمر والشمس
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.className = 'fas fa-sun'; // شمس في الوضع الليلي
+toggleSwitch.addEventListener('change', function(e) {
+    if (e.target.checked) {
+        body.classList.add('dark-mode');
     } else {
-        themeToggle.className = 'fas fa-moon'; // قمر في الوضع الفاتح
+        body.classList.remove('dark-mode');
     }
 });
 
-// 3. الأنيميشن الانسيابي عند النزول (Scroll Animations)
 const hiddenElements = document.querySelectorAll('.hidden');
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         }
     });
-}, { threshold: 0.1 }); // الأنيميشن يشتغل لما 10% من القسم يظهر
+}, { threshold: 0.15 });
 
 hiddenElements.forEach((el) => observer.observe(el));
 
-// تشغيل وظيفة الكتابة بعد تحميل الصفحة
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
 });
