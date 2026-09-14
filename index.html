@@ -101,16 +101,20 @@
         </div>
     </section>
 
-    <!-- قسم الشهادات الجديد -->
+<!-- قسم الشهادات المحدث -->
     <section id="certificates" class="certificates hidden">
         <h2>Certificates & <span class="gradient-text">Achievements</span></h2>
         <div class="project-grid">
             <div class="project-card" style="text-align: center;">
                 <div class="card-glow"></div>
-                <i class="fas fa-award project-icon floating" style="color: #f39c12;"></i>
+                <!-- مكان عرض صورة الشهادة -->
+                <div style="overflow: hidden; border-radius: 10px; margin-bottom: 15px;">
+                    <img src="certificate.jpg" alt="Certificate" style="width: 100%; height: auto; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
                 <h3>Programming Basics</h3>
-                <p>Completed foundational courses in programming logic and problem solving.</p>
-                <span class="project-link" style="justify-content: center; color: var(--text-muted);">Coming Soon</span>
+                <p>Verified certificate of completion in programming fundamentals.</p>
+                <!-- زرار لفتح الشهادة بحجمها الكامل في تبويب جديد -->
+                <a href="certificate.jpg" target="_blank" class="project-link" style="justify-content: center;">View Full Certificate <i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     </section>
