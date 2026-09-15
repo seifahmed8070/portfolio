@@ -1,68 +1,97 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدونة الصحة</title>
-    <link rel="stylesheet" href="../assets/css/main2.css">
+    <title>مدونة الصحة | سيف بلوج</title>
+    <link rel="stylesheet" href="../assets/css/style-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
-    <header>
-        <h1>مدونة الصحة</h1>
+
+    <header class="blog-header">
+        <div class="nav-container">
+            <a href="../index.html" class="blog-logo">Seif<span>.</span>Blog</a>
+            <nav class="blog-nav">
+                <a href="../index.html">الرئيسية</a>
+                <a href="post1.html">التكنولوجيا</a>
+                <a href="post2.html" class="active">الصحة</a>
+                <a href="post3.html">السفر</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-            <main>
-                <article>
-                    <h2>الصحة: كنزك الحقيقي</h2>
-                    <p class="meta">27 فبراير 2025 بواسطة <a href="#">محمد فؤاد</a></p>
-                    <h3>مقدمة</h3>
-                    <p>تُعتبر الصحة من أثمن النعم التي يمتلكها الإنسان، فهي الأساس لحياة سعيدة ومنتجة. الاهتمام بالصحة يعزز جودة الحياة ويقلل من مخاطر الإصابة بالأمراض المزمنة.</p>
-                    <h3>أهمية الصحة</h3>
-                    <ul>
-                        <li>تعزيز جهاز المناعة: اتباع نمط حياة صحي يساهم في تقوية جهاز المناعة ضد الأمراض.</li>
-                        <li>تحسين الحالة النفسية: ممارسة التمارين الرياضية والتغذية السليمة تساعد في تحسين المزاج وتقليل التوتر.</li>
-                        <li>زيادة مستوى الطاقة: الأكل الصحي والنوم الكافي يؤديان إلى الشعور بالنشاط والحيوية.</li>
-                        <li>الوقاية من الأمراض: اتباع نظام صحي يقلل من احتمالية الإصابة بأمراض القلب والسكري.</li>
-                    </ul>
-                    <h3>أهم العادات الصحية لعام 2025</h3>
-                    <ol>
-                        <li>التغذية المتوازنة 🥗</li>
-                        <p>يجب أن يتضمن النظام الغذائي جميع العناصر الغذائية مثل البروتينات، الكربوهيدرات، والدهون الصحية.</p>
-                        <li>ممارسة الرياضة 🏃‍♂️</li>
-                        <p>الرياضة المنتظمة تساهم في الحفاظ على اللياقة البدنية وتحسين الصحة العقلية.</p>
-                        <li>النوم الجيد 😴</li>
-                        <p>الحصول على 7-8 ساعات من النوم يوميًا ضروري لصحة الجسم والعقل.</p>
-                    </ol>
-                    <h3>نصائح للحفاظ على الصحة</h3>
-                    <ul>
-                        <li>تناول الكثير من الفواكه والخضروات يوميًا لتعزيز المناعة.</li>
-                        <li>مارس التمارين الرياضية بانتظام للحفاظ على اللياقة البدنية.</li>
-                        <li>اشرب كميات كافية من الماء للحفاظ على ترطيب الجسم.</li>
-                        <li>ابتعد عن العادات الضارة مثل التدخين وتناول الأطعمة المصنعة بكثرة.</li>
-                    </ul>
-                    <h3>الخاتمة</h3>
-                    <p>💪🍏 صحتك هي أغلى ما تملك، فاحرص على اتباع نمط حياة صحي لتعزيز جودة حياتك والتمتع بحياة مليئة بالنشاط والطاقة.</p>
-                </article>
-            </main>
-    
-            <aside>
-                <section class="about">
-                    <h3>عن الكاتب</h3>
-                    <img src="https://url-shortener.me/F05" alt="محمد فؤاد">
-                    <p>محمد فؤاد، مهتم بالصحة والتغذية السليمة، يشارك نصائح للحفاظ على حياة صحية.</p>
-                    <p><a href="https://facebook.com" target="_blank">صفحتي على فيسبوك</a></p>
-                </section>
-                <section class="links">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="/index.html">Home Page</a></li>
-                        <li><a href="/plog/plog-posts/post1.html">Most plogs </a></li>
-                        <li><a href="about"> About</a></li>
-                    </ul>
-                </section>
-            </aside>
-    </div>
+    <main class="blog-main" style="max-width: 800px;">
+        <article style="background: var(--card-bg); border: 1px solid var(--border-clr); padding: 40px; border-radius: 16px;">
+            <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: var(--health-clr); border: 1px solid rgba(52, 211, 153, 0.3); margin-bottom: 15px; display: inline-block;">الصحة والحياة</span>
+            <h1 style="font-size: 2.2rem; margin-bottom: 20px;">الصحة: كنزك الحقيقي في الحياة</h1>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;"><i class="far fa-calendar-alt"></i> تم النشر في فبراير 2026</p>
+            
+            <div style="line-height: 1.8; font-size: 1.05rem; color: #e5e7eb;">
+                <p>تلعب التغذية السليمة والعادات اليومية المتوازنة دورًا هامًا وبارزًا في تقوية جهاز المناعة، وخاصة خلال فصل الشتاء وتغيرات الفصول التي تتطلب منا الحفاظ على طاقة الجسم وحيويته.</p>
+                <h3 style="color: var(--health-clr); margin-top: 30px;">أهمية التغذية المتوازنة</h3>
+                <p>تناول الخضروات، الفواكه الطازجة، وشرب كميات كافية من الماء يحافظ على نضارة البشرة ويحمي الجسم من الأمراض، ويمنحك القدرة على التركيز طوال اليوم سواء في الدراسة أو العمل.</p>
+                <h3 style="color: var(--health-clr); margin-top: 30px;">نصائح سريعة لحياة صحية</h3>
+                <p>الانتظام في النوم مبكراً، ممارسة الرياضة الخفيفة بانتظام، والابتعاد عن التوتر المستمر هي مفاتيح البقاء بصحة جيدة وسعادة دائمة.</p>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 1px solid var(--border-clr); padding-top: 20px;">
+                <a href="../index.html" class="btn-read"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="blog-footer">
+        <p>جميع الحقوق محفوظة &copy; 2026 | تصميم وتطوير سيف أحمد</p>
+    </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة الصحة | سيف بلوج</title>
+    <link rel="stylesheet" href="../assets/css/style-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="blog-header">
+        <div class="nav-container">
+            <a href="../index.html" class="blog-logo">Seif<span>.</span>Blog</a>
+            <nav class="blog-nav">
+                <a href="../index.html">الرئيسية</a>
+                <a href="post1.html">التكنولوجيا</a>
+                <a href="post2.html" class="active">الصحة</a>
+                <a href="post3.html">السفر</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="blog-main" style="max-width: 800px;">
+        <article style="background: var(--card-bg); border: 1px solid var(--border-clr); padding: 40px; border-radius: 16px;">
+            <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: var(--health-clr); border: 1px solid rgba(52, 211, 153, 0.3); margin-bottom: 15px; display: inline-block;">الصحة والحياة</span>
+            <h1 style="font-size: 2.2rem; margin-bottom: 20px;">الصحة: كنزك الحقيقي في الحياة</h1>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;"><i class="far fa-calendar-alt"></i> تم النشر في فبراير 2026</p>
+            
+            <div style="line-height: 1.8; font-size: 1.05rem; color: #e5e7eb;">
+                <p>تلعب التغذية السليمة والعادات اليومية المتوازنة دورًا هامًا وبارزًا في تقوية جهاز المناعة، وخاصة خلال فصل الشتاء وتغيرات الفصول التي تتطلب منا الحفاظ على طاقة الجسم وحيويته.</p>
+                <h3 style="color: var(--health-clr); margin-top: 30px;">أهمية التغذية المتوازنة</h3>
+                <p>تناول الخضروات، الفواكه الطازجة، وشرب كميات كافية من الماء يحافظ على نضارة البشرة ويحمي الجسم من الأمراض، ويمنحك القدرة على التركيز طوال اليوم سواء في الدراسة أو العمل.</p>
+                <h3 style="color: var(--health-clr); margin-top: 30px;">نصائح سريعة لحياة صحية</h3>
+                <p>الانتظام في النوم مبكراً، ممارسة الرياضة الخفيفة بانتظام، والابتعاد عن التوتر المستمر هي مفاتيح البقاء بصحة جيدة وسعادة دائمة.</p>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 1px solid var(--border-clr); padding-top: 20px;">
+                <a href="../index.html" class="btn-read"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="blog-footer">
+        <p>جميع الحقوق محفوظة &copy; 2026 | تصميم وتطوير سيف أحمد</p>
+    </footer>
+
 </body>
 </html>
