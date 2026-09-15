@@ -1,51 +1,71 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Layout</title>
-    <link rel="stylesheet" href="assets/css/style-home.css">
+    <title>مدونة سيف | Seif Blog</title>
+    <!-- ربط ملف الـ CSS الموحد -->
+    <link rel="stylesheet" href="assets/css/main2.css">
+    <!-- مكتبة الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- الهيدر والناف بار -->
     <header class="navbar">
+        <div class="logo">Seif<span>.</span> Blog</div>
         <nav>
-            <ul>
-                <li><a href="/plog-posts/post1.html">Most plogs</a></li>
-                <li><a href="#">Most Writers</a></li>
-                <li><a href="#">Call us</a></li>
-                <li><a href="about">About</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="plog-posts/post1.html">المقالات</a></li>
+                <li><a href="#about">عن المدونة</a></li>
+                <li><a href="https://seif-soliman.online" target="_blank">البورتفوليو الأساسي</a></li>
             </ul>
         </nav>
         <div class="buttons">
-            <button class="btn follow">FOLLOW</button>
-            <button class="btn subscribe">SUBSCRIBE</button>
+            <button class="btn follow"><i class="fas fa-bell"></i> متابعة</button>
+            <button class="btn subscribe"><i class="fas fa-envelope"></i> اشتراك</button>
         </div>
     </header>
 
+    <!-- المحتوى الرئيسي -->
     <main class="content">
-        <h1 class="title">Blog</h1>
+        <div class="hero-section">
+            <h1 class="title">أحدث <span class="gradient-text">المقالات والتدوينات</span></h1>
+            <p class="subtitle">استكشف معنا مقالات متنوعة في التكنولوجيا، الصحة، وعالم السفر والمغامرات.</p>
+        </div>
+
         <div class="grid">
+            <!-- كارت مقال التكنولوجيا -->
             <article class="card">
-                <h2 class="color443">مدونة التكنولوجيا</h2>
-                <p class="color443">في السنوات الأخيرة، أصبح الذكاء الاصطناعي جزءًا لا يتجزأ من حياتنا اليومية</p>
-                <a href="plog-posts/post1.html">More</a>
+                <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                <h2>مدونة التكنولوجيا</h2>
+                <p>في السنوات الأخيرة، أصبح الذكاء الاصطناعي جزءًا لا يتجزأ من حياتنا اليومية وكيف نغير مستقبلنا التقني.</p>
+                <a href="plog-posts/post1.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
             </article>
+
+            <!-- كارت مقال الصحة -->
             <article class="card">
-                <h2 class="color443">مدونة الصحة</h2>
-                <p class="color443"> تلعب التغذية دورًا هامًا في تقوية جهاز المناعة، وخاصة خلال فصل الشتاء</p>
-                <a href="plog-posts/post2.html">More</a>
+                <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                <h2>مدونة الصحة</h2>
+                <p>تلعب التغذية دورًا هامًا في تقوية جهاز المناعة، وخاصة خلال فصل الشتاء للحفاظ على حيوية الجسم.</p>
+                <a href="plog-posts/post2.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
             </article>
+
+            <!-- كارت مقال السفر -->
             <article class="card">
-                <h2 class="color443">مدونة السفر</h2>
-                <p class="color443">السفر فرصة للهروب من الروتين وتجربة حياة جديدة إذا كنت تفكر في السفر هذا العام، فإليك قائمة بأفضل الوجهات</p>
-                <a href="plog-posts/post3.html">More</a>
+                <div class="card-icon"><i class="fas fa-plane-departure"></i></div>
+                <h2>مدونة السفر</h2>
+                <p>السفر فرصة للهروب من الروتين وتجربة حياة جديدة. إذا كنت تفكر في السفر هذا العام، فإليك أفضل الوجهات.</p>
+                <a href="plog-posts/post3.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
             </article>
         </div>
     </main>
 
+    <!-- الفوتر -->
     <footer>
-        <p>Copyright 2025</p>
+        <p>تم الحفظ والتصميم بواسطة سيف أحمد &copy; 2026</p>
     </footer>
+
 </body>
 </html>
