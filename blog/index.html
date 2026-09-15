@@ -3,68 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدونة سيف | Seif Blog</title>
-    <!-- ربط ملف الـ CSS الموحد -->
-    <link rel="stylesheet" href="assets/css/main2.css">
-    <!-- مكتبة الأيقونات FontAwesome -->
+    <title>مدونة سيف | السطح التقني</title>
+    <link rel="stylesheet" href="assets/css/style-home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- الهيدر والناف بار -->
-    <header class="navbar">
-        <div class="logo">Seif<span>.</span> Blog</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="plog-posts/post1.html">المقالات</a></li>
-                <li><a href="#about">عن المدونة</a></li>
-                <li><a href="https://seif-soliman.online" target="_blank">البورتفوليو الأساسي</a></li>
-            </ul>
-        </nav>
-        <div class="buttons">
-            <button class="btn follow"><i class="fas fa-bell"></i> متابعة</button>
-            <button class="btn subscribe"><i class="fas fa-envelope"></i> اشتراك</button>
+    <header class="blog-header">
+        <div class="nav-container">
+            <a href="index.html" class="blog-logo">Seif<span>.</span>Blog</a>
+            <nav class="blog-nav">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="plog-posts/post1.html">التكنولوجيا</a>
+                <a href="plog-posts/post2.html">الصحة</a>
+                <a href="plog-posts/post3.html">السفر</a>
+                <a href="https://seif-soliman.online" target="_blank" class="portfolio-link">البورتفوليو <i class="fas fa-external-link-alt"></i></a>
+            </nav>
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي -->
-    <main class="content">
-        <div class="hero-section">
-            <h1 class="title">أحدث <span class="gradient-text">المقالات والتدوينات</span></h1>
-            <p class="subtitle">استكشف معنا مقالات متنوعة في التكنولوجيا، الصحة، وعالم السفر والمغامرات.</p>
+    <section class="blog-hero">
+        <div class="hero-box">
+            <span class="badge">مرحباً بك في عالمي الرقمي</span>
+            <h1>نكتب عن <span>التكنولوجيا</span>، الحياة، وأكثر</h1>
+            <p>مجموعة من المقالات والأفكار المترتبة بشغف لتشاركني رحلتي في عالم البرمجة والمعرفة.</p>
+        </div>
+    </section>
+
+    <main class="blog-main">
+        <div class="section-title">
+            <h2>أحدث التدوينات والمقالات</h2>
+            <p>استكشف المقالات المصنفة بعناية</p>
         </div>
 
-        <div class="grid">
-            <!-- كارت مقال التكنولوجيا -->
-            <article class="card">
-                <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                <h2>مدونة التكنولوجيا</h2>
-                <p>في السنوات الأخيرة، أصبح الذكاء الاصطناعي جزءًا لا يتجزأ من حياتنا اليومية وكيف نغير مستقبلنا التقني.</p>
-                <a href="plog-posts/post1.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+        <div class="articles-grid">
+            <article class="article-card">
+                <div class="card-tag tech">تكنولوجيا</div>
+                <div class="card-content">
+                    <h3>التكنولوجيا: المستقبل بين يديك</h3>
+                    <p>تعرف على أحدث الابتكارات التقنية لعام 2026 ودور الذكاء الاصطناعي في تغيير شكل حياة الإنسان اليومية.</p>
+                    <div class="card-footer">
+                        <span class="date"><i class="far fa-calendar-alt"></i> فبراير 2026</span>
+                        <a href="plog-posts/post1.html" class="btn-read">اقرأ المقال <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </article>
 
-            <!-- كارت مقال الصحة -->
-            <article class="card">
-                <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
-                <h2>مدونة الصحة</h2>
-                <p>تلعب التغذية دورًا هامًا في تقوية جهاز المناعة، وخاصة خلال فصل الشتاء للحفاظ على حيوية الجسم.</p>
-                <a href="plog-posts/post2.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            <article class="article-card">
+                <div class="card-tag health">صحة</div>
+                <div class="card-content">
+                    <h3>الصحة: كنزك الحقيقي في الحياة</h3>
+                    <p>أهم العادات الصحية والتغذية المتوازنة التي تساعدك على تقوية المناعة والحفاظ على طاقتك طوال اليوم.</p>
+                    <div class="card-footer">
+                        <span class="date"><i class="far fa-calendar-alt"></i> فبراير 2026</span>
+                        <a href="plog-posts/post2.html" class="btn-read">اقرأ المقال <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </article>
 
-            <!-- كارت مقال السفر -->
-            <article class="card">
-                <div class="card-icon"><i class="fas fa-plane-departure"></i></div>
-                <h2>مدونة السفر</h2>
-                <p>السفر فرصة للهروب من الروتين وتجربة حياة جديدة. إذا كنت تفكر في السفر هذا العام، فإليك أفضل الوجهات.</p>
-                <a href="plog-posts/post3.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            <article class="article-card">
+                <div class="card-tag travel">سفر</div>
+                <div class="card-content">
+                    <h3>السفر: نافذتك إلى العالم والثقافات</h3>
+                    <p>لماذا يعتبر السفر استثماراً في نفسك؟ اكتشف معنا أفضل الوجهات السياحية وكيف تخطط لرحلتك القادمة.</p>
+                    <div class="card-footer">
+                        <span class="date"><i class="far fa-calendar-alt"></i> فبراير 2026</span>
+                        <a href="plog-posts/post3.html" class="btn-read">اقرأ المقال <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </article>
         </div>
     </main>
 
-    <!-- الفوتر -->
-    <footer>
-        <p>تم الحفظ والتصميم بواسطة سيف أحمد &copy; 2026</p>
+    <footer class="blog-footer">
+        <p>جميع الحقوق محفوظة &copy; 2026 | تصميم وتطوير سيف أحمد</p>
     </footer>
 
 </body>
