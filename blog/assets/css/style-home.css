@@ -29,6 +29,7 @@ body {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
+    flex-wrap: nowrap; /* دي المهمة عشان تمنع العناصر تنزل سطر جديد */
 }
 
 .logo {
@@ -44,9 +45,10 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 20px; /* قللنا المسافة شوية عشان تكفي الشاشة */
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .nav-links a {
