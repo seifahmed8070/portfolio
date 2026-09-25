@@ -39,8 +39,11 @@ body {
     display: inline-block;
 }
 
-/* تنسيق الصورة الشخصية الجديدة */
+/* تنسيق حاوية الصورة والصورة الشخصية بدقة */
 .profile-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 25px;
 }
 
@@ -116,7 +119,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
 .hidden { opacity: 0; transform: translateY(40px) scale(0.95); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
 .show { opacity: 1; transform: translateY(0) scale(1); }
 
-/* أزرار الهيرو الجديدة */
+/* أزرار الهيرو */
 .hero-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
 .btn-neon {
