@@ -18,7 +18,7 @@
     --primary-color: #38bdf8;
     --gradient-start: #38bdf8;
     --gradient-end: #818cf8;
-    --nav-bg:  #062658;;
+    --nav-bg:  #062658;
     --shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
@@ -37,6 +37,25 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+}
+
+/* تنسيق الصورة الشخصية الجديدة */
+.profile-img-container {
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
 }
 
 .availability-badge {
@@ -97,7 +116,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
 .hidden { opacity: 0; transform: translateY(40px) scale(0.95); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
 .show { opacity: 1; transform: translateY(0) scale(1); }
 
-/* أزرار الهيرو الجديدة بتصميم عصري (Neon & Glass) */
+/* أزرار الهيرو الجديدة */
 .hero-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
 .btn-neon {
@@ -139,7 +158,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
     transform: translateY(-3px);
 }
 
-/* زر الرسائل الثابت زي الشات بوت (Floating Chat Button) */
+/* زر الرسائل الثابت */
 .floating-chat-btn {
     position: fixed;
     bottom: 30px;
@@ -163,7 +182,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
     box-shadow: 0 8px 30px rgba(56, 189, 248, 0.5);
 }
 
-/* ستايل المهارات والمهارات القادمة */
+/* ستايل المهارات */
 .skills-container { max-width: 900px; margin: 0 auto; }
 .skills-category h3 { margin-bottom: 20px; font-size: 1.3rem; }
 .skills-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
@@ -172,7 +191,6 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
 .skill-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 12px; display: block; }
 .skill-card span { font-weight: 600; font-size: 1rem; display: block; }
 
-/* ستايل مهارات المستقبل (Roadmap) */
 .skill-card.upcoming { opacity: 0.7; border: 1px dashed var(--primary-color); }
 .badge-soon {
     position: absolute;
@@ -190,7 +208,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* خطير جداً: بيخليهم ينزلوا تحت بعض لو الشاشة ضاقت */
+    flex-wrap: wrap;
     margin-top: 50px;
 }
 
@@ -205,7 +223,7 @@ p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
     border: 1px solid rgba(128,128,128,0.1);
     width: 340px;
     text-align: left;
-    box-sizing: border-box; /* بيمنع أي تداخل في المقاسات */
+    box-sizing: border-box;
 }
 
 .project-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
