@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seif Ahmed | Portfolio</title>
+    
+    <!-- جوجل سيرش كونسول (كود التحقق) -->
+    <meta name="google-site-verification" content="Qus5b6AXEYcP3JUKUWuwxd8RjC31c_LWBWnlUMtWpy4" />
+    
+    <!-- وصف ومفاتيح البحث (SEO) -->
+    <meta name="description" content="Personal portfolio of Seif Ahmed, showcasing projects and Python skills.">
+    <meta name="keywords" content="Seif Ahmed, Software Developer, Python Portfolio, سيف أحمد">
+
+    <!-- ملفات التنسيق والأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+
+    <nav class="navbar">
+        <h2 class="logo">Seif<span>.</span></h2>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" checked />
+                <div class="slider round">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </label>
+        </div>
+    </nav>
+
+    <section id="about" class="hero hidden">
+        <div class="hero-content">
+            <!-- الصورة الشخصية المظبوطة -->
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Seif Ahmed" class="profile-img">
+            </div>
+
+            <div class="availability-badge">
+                <span class="pulse-dot"></span> Available for Opportunities
+            </div>
+
+            <h1>Hi, I'm <span class="gradient-text">Seif Ahmed</span></h1>
+            <h3>I am a <span class="typing-text"></span></h3>
+            <p>Passionate CS student creating modern web applications and smart Python solutions.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/seifahmed8070" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/seif-ahmed-6300a0437/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/saif.ahmed.833438" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:contact@seif-soliman.online" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <!-- الأزرار بالتصميم واللون الجديد -->
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-neon">View My Work <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="btn btn-glass" id="cv-btn" onclick="alert('My CV will be available soon!')">Download CV <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education hidden">
+        <h2>My <span class="gradient-text">Education</span></h2>
+        <div class="project-grid">
+            <div class="project-card" style="width: 100%; max-width: 600px; text-align: center;">
+                <div class="card-glow"></div>
+                <i class="fas fa-graduation-cap floating" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <h3>Faculty of Computers and Information Science "FCIS"</h3>
+                <h4 style="color: var(--text-muted); margin: 10px 0;">Ain Shams University "ASU"</h4>
+                <p>Starting my academic journey in 2026 with a strong mathematical background. Passionate about software development, algorithms, and mastering new technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات بنمط مختلف (المهارات الحالية والمهارات القادمة) -->
+    <section id="skills" class="skills hidden">
+        <h2>My <span class="gradient-text">Skills & Roadmap</span></h2>
+        <p style="text-align: center; margin-bottom: 20px;">What I use now, and what I am eager to master next.</p>
+        
+        <div class="skills-container">
+            <!-- المهارات الحالية -->
+            <div class="skills-category">
+                <h3>Core Stack</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-python floating"></i><span>Python</span></div>
+                    <div class="skill-card"><i class="fab fa-html5 floating"></i><span>HTML5</span></div>
+                    <div class="skill-card"><i class="fab fa-css3-alt floating"></i><span>CSS3</span></div>
+                    <div class="skill-card"><i class="fab fa-js floating"></i><span>JavaScript</span></div>
+                    <div class="skill-card"><i class="fab fa-git-alt floating"></i><span>Git & GitHub</span></div>
+                </div>
+            </div>
+
+            <!-- المهارات القادمة (تحت الإعداد) -->
+            <div class="skills-category" style="margin-top: 40px;">
+                <h3 style="color: var(--text-muted);">Learning Next (Roadmap)</h3>
+                <div class="skills-grid">
+                    <div class="skill-card upcoming"><i class="fas fa-database"></i><span>Databases & SQL</span><span class="badge-soon">Soon</span></div>
+                    <div class="skill-card upcoming"><i class="fab fa-react"></i><span>React.js</span><span class="badge-soon">Soon</span></div>
+                    <div class="skill-card upcoming"><i class="fas fa-brain"></i><span>Data Structures</span><span class="badge-soon">Soon</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects hidden">
+        <h2>My <span class="gradient-text">Projects</span></h2>
+        <div class="project-grid">
+            <!-- كارت لعبة البايثون -->
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <i class="fas fa-gamepad project-icon floating"></i>
+                <h3>Python Adventure Game</h3>
+                <p>A text-based interactive choice game built with Python logic and structured code.</p>
+                <a href="https://colab.research.google.com/drive/1cH2NgqmvfIpkl_ZzdY5CyM8IFYkaD1q4?usp=sharing" target="_blank" class="project-link">Play Game <i class="fas fa-play"></i></a>
+            </div>
+
+            <!-- كارت موقع البورتفوليو -->
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <i class="fas fa-code project-icon floating"></i>
+                <h3>Portfolio Website</h3>
+                <p>My personal responsive portfolio built using modern web technologies.</p>
+                <a href="https://seif-soliman.online" target="_blank" class="project-link">Live Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- كارت مشروع المدونة -->
+            <div class="project-card">
+                <div class="card-glow"></div>
+                <i class="fas fa-blog project-icon floating"></i>
+                <h3>Multi-Page Blog</h3>
+                <p>A responsive multi-page blog layout featuring tech, health, and travel posts using semantic HTML and CSS.</p>
+                <a href="https://seif-soliman.online/blog" target="_blank" class="project-link">Live Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates hidden">
+        <h2>Certificates & <span class="gradient-text">Achievements</span></h2>
+        <div class="project-grid">
+            <div class="project-card" style="text-align: center;">
+                <div class="card-glow"></div>
+                <div style="overflow: hidden; border-radius: 10px; margin-bottom: 15px; cursor: pointer;" onclick="openModal()">
+                    <img src="certificate.jpg" alt="Certificate" style="width: 100%; height: auto; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <h3>Programming Basics</h3>
+                <p>Verified certificate of completion in programming fundamentals.</p>
+                <button class="project-link" onclick="openModal()" style="background: none; border: none; cursor: pointer; width: 100%; justify-content: center;">View Full Size <i class="fas fa-expand"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="certModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="img01" src="certificate.jpg">
+    </div>
+
+    <section id="contact" class="contact hidden">
+        <h2>Get In <span class="gradient-text">Touch</span></h2>
+        <p>Feel free to reach out for collaborations or inquiries!</p>
+        <a href="mailto:contact@seif-soliman.online" class="btn btn-neon" style="margin-top: 15px;">Send Email <i class="fas fa-paper-plane"></i></a>
+    </section>
+
+<!-- زر واتساب ثابت في زاوية الشاشة -->
+    <a href="https://wa.me/201066783072" class="floating-chat-btn" target="_blank" title="Chat with me on WhatsApp!">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
