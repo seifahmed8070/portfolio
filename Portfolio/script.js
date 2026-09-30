@@ -1,5 +1,4 @@
-// Typing Effect for Header
-const words = ["Computer Science Student @ Ain Shams University", "Web & Python Developer"];
+const words = ["Computer Science Student", "Python Developer", "Tech Enthusiast"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -7,7 +6,6 @@ const typingElement = document.querySelector('.typing-text');
 
 function type() {
     if (!typingElement) return;
-    
     const currentWord = words[wordIndex];
     
     if (isDeleting) {
@@ -21,7 +19,7 @@ function type() {
     let typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 2000; // Pause at end of word
+        typeSpeed = 2000;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -32,6 +30,38 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const body = document.body;
+
+toggleSwitch.addEventListener('change', function(e) {
+    if (e.target.checked) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.15 });
+
+hiddenElements.forEach((el) => observer.observe(el));
+
+function openModal() {
+    const modal = document.getElementById("certModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById("certModal");
+    modal.style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    type();
+    setTimeout(type, 1000);
 });
