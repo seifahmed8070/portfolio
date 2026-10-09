@@ -1,12 +1,12 @@
 :root {
     --bg-color: #7dd0df;
-    --card-bg: #383980;
+    --card-bg: #ffffff;
     --text-color: #1e293b;
     --text-muted: #475569;
     --primary-color: #4f46e5;
     --gradient-start: #4f46e5;
     --gradient-end: #06b6d4;
-    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-bg: rgba(64, 72, 180, 0.85);
     --shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
