@@ -1,5 +1,20 @@
 /* =========================================
-   المتغيرات الأساسية (لازم تكون فوق)
+   1. تشغيل إظهار العناصر أولاً (عشان الشاشة ماتبقاش فاضية)
+========================================= */
+const hiddenElements = document.querySelectorAll('.hidden');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.15 });
+
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+/* =========================================
+   2. المتغيرات الأساسية (مؤمنة ضد الأخطاء)
 ========================================= */
 const langBtn = document.getElementById('lang-btn');
 const typingElement = document.querySelector('.typing-text');
@@ -7,7 +22,11 @@ const typingElement = document.querySelector('.typing-text');
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let currentLang = localStorage.getItem('siteLang') || 'en';
+
+// حماية: التأكد إن اللغة يا إنجليزي يا عربي فقط، لو أي حاجة تانية يرجع إنجليزي
+let savedLang = localStorage.getItem('siteLang');
+let currentLang = (savedLang === 'en' || savedLang === 'ar') ? savedLang : 'en';
+
 window.cvAlertMsg = "My CV will be available soon!";
 
 const typingWords = {
@@ -18,7 +37,7 @@ let words = typingWords[currentLang];
 
 
 /* =========================================
-   نظام الترجمة (English / Arabic Toggle)
+   3. نظام الترجمة (القاموس والتحويل)
 ========================================= */
 const translations = {
     en: {
@@ -114,33 +133,37 @@ const translations = {
 };
 
 function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('siteLang', lang);
+    try {
+        currentLang = lang;
+        localStorage.setItem('siteLang', lang);
 
-    // تغيير اتجاه الصفحة واسم الزرار
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang;
-    if (langBtn) langBtn.textContent = lang === 'ar' ? 'English' : 'عربي';
+        // تغيير اتجاه الصفحة واسم الزرار
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+        if (langBtn) langBtn.textContent = lang === 'ar' ? 'English' : 'عربي';
 
-    // ترجمة العنوان فوق في التاب
-    document.title = translations[lang]["title"];
-    window.cvAlertMsg = lang === 'ar' ? "سيرتي الذاتية ستكون متاحة قريباً!" : "My CV will be available soon!";
+        // ترجمة العنوان فوق في التاب
+        document.title = translations[lang]["title"];
+        window.cvAlertMsg = lang === 'ar' ? "سيرتي الذاتية ستكون متاحة قريباً!" : "My CV will be available soon!";
 
-    // ترجمة كل النصوص 
-    const elements = document.querySelectorAll('[data-key]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
+        // ترجمة كل النصوص 
+        const elements = document.querySelectorAll('[data-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
 
-    // إعادة ضبط تأثير الكتابة عشان يترجم
-    words = typingWords[lang];
-    wordIndex = 0;
-    charIndex = 0;
-    isDeleting = false;
-    if (typingElement) typingElement.textContent = "";
+        // إعادة ضبط تأثير الكتابة عشان يترجم
+        words = typingWords[lang];
+        wordIndex = 0;
+        charIndex = 0;
+        isDeleting = false;
+        if (typingElement) typingElement.textContent = "";
+    } catch (e) {
+        console.error("Error setting language:", e);
+    }
 }
 
 // تشغيل التبديل عند الضغط
@@ -155,12 +178,12 @@ setLanguage(currentLang);
 
 
 /* =========================================
-   باقي الأكواد (الكتابة، الدارك مود، الأنيميشن)
+   4. باقي الأكواد (الكتابة، الدارك مود، الصور)
 ========================================= */
-
 function type() {
-    if (!typingElement) return;
+    if (!typingElement || !words) return;
     const currentWord = words[wordIndex];
+    if (!currentWord) return;
     
     if (isDeleting) {
         typingElement.textContent = currentWord.substring(0, charIndex - 1);
@@ -196,17 +219,6 @@ if (toggleSwitch) {
         }
     });
 }
-
-const hiddenElements = document.querySelectorAll('.hidden');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.15 });
-
-hiddenElements.forEach((el) => observer.observe(el));
 
 function openModal() {
     const modal = document.getElementById("certModal");
