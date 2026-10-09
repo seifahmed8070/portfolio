@@ -1,11 +1,28 @@
 /* =========================================
+   المتغيرات الأساسية (لازم تكون فوق)
+========================================= */
+const langBtn = document.getElementById('lang-btn');
+const typingElement = document.querySelector('.typing-text');
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let currentLang = localStorage.getItem('siteLang') || 'en';
+window.cvAlertMsg = "My CV will be available soon!";
+
+const typingWords = {
+    en: ["Computer Science Student", "Python Developer", "Tech Enthusiast"],
+    ar: ["طالب علوم حاسب", "مطور بايثون", "شغوف بالتقنية"]
+};
+let words = typingWords[currentLang];
+
+
+/* =========================================
    نظام الترجمة (English / Arabic Toggle)
 ========================================= */
-
-// قاموس الكلمات لكل لغة
 const translations = {
     en: {
-        "title": "Seif Soliman | Portfolio",
+        "title": "Seif Ahmed | Portfolio",
         "nav-about": "About",
         "nav-education": "Education",
         "nav-skills": "Skills",
@@ -50,7 +67,7 @@ const translations = {
         "contact-link": "Send Email <i class='fas fa-paper-plane'></i>"
     },
     ar: {
-        "title": "سيف سليمان | بورتفوليو",
+        "title": "سيف أحمد | بورتفوليو",
         "nav-about": "من أنا",
         "nav-education": "التعليم",
         "nav-skills": "المهارات",
@@ -66,7 +83,7 @@ const translations = {
         "edu-title": "<span class='gradient-text'>تعليمي</span> الأكاديمي",
         "edu-fac": "كلية الحاسبات والمعلومات",
         "edu-uni": "جامعة عين شمس",
-        "edu-desc": "بدأت رحلتي الأكاديمية عام 2026 بخلفية قوية في الرياضيات. شغوف بتطوير البرمجيات والخوارزميات وتعلم التقنيات الجديدة.",
+        "edu-desc": "بدأت رحلتي الأكاديمية بخلفية قوية في الرياضيات. شغوف بتطوير البرمجيات والخوارزميات وتعلم التقنيات الجديدة.",
         "skills-title": "<span class='gradient-text'>مهاراتي وخطتي</span>",
         "skills-sub": "التقنيات التي أستخدمها حالياً، وما أتطلع لتعلمه لاحقاً.",
         "skills-core": "المهارات الأساسية",
@@ -96,33 +113,20 @@ const translations = {
     }
 };
 
-const typingWords = {
-    en: ["Computer Science Student", "Python Developer", "Tech Enthusiast"],
-    ar: ["طالب علوم حاسب", "مطور بايثون", "شغوف بالتقنية"]
-};
-
-// متغيرات اللغة
-const langBtn = document.getElementById('lang-btn');
-let currentLang = localStorage.getItem('siteLang') || 'en';
-let words = typingWords[currentLang];
-window.cvAlertMsg = "My CV will be available soon!";
-
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('siteLang', lang);
 
-    // تغيير اتجاه الصفحة
+    // تغيير اتجاه الصفحة واسم الزرار
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
-    langBtn.textContent = lang === 'ar' ? 'English' : 'عربي';
+    if (langBtn) langBtn.textContent = lang === 'ar' ? 'English' : 'عربي';
 
     // ترجمة العنوان فوق في التاب
     document.title = translations[lang]["title"];
-
-    // رسالة الـ Alert للـ CV
     window.cvAlertMsg = lang === 'ar' ? "سيرتي الذاتية ستكون متاحة قريباً!" : "My CV will be available soon!";
 
-    // ترجمة كل النصوص اللي واخدة data-key
+    // ترجمة كل النصوص 
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(el => {
         const key = el.getAttribute('data-key');
@@ -131,7 +135,7 @@ function setLanguage(lang) {
         }
     });
 
-    // إعادة ضبط تأثير الكتابة
+    // إعادة ضبط تأثير الكتابة عشان يترجم
     words = typingWords[lang];
     wordIndex = 0;
     charIndex = 0;
@@ -139,23 +143,20 @@ function setLanguage(lang) {
     if (typingElement) typingElement.textContent = "";
 }
 
-// تشغيل التبديل عند الضغط على الزرار
-langBtn.addEventListener('click', () => {
-    setLanguage(currentLang === 'en' ? 'ar' : 'en');
-});
+// تشغيل التبديل عند الضغط
+if (langBtn) {
+    langBtn.addEventListener('click', () => {
+        setLanguage(currentLang === 'en' ? 'ar' : 'en');
+    });
+}
 
-// تهيئة اللغة عند تحميل الصفحة
+// تهيئة اللغة عند التحميل
 setLanguage(currentLang);
 
 
 /* =========================================
-   باقي الأكواد الأصلية بتاعتك
+   باقي الأكواد (الكتابة، الدارك مود، الأنيميشن)
 ========================================= */
-
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingElement = document.querySelector('.typing-text');
 
 function type() {
     if (!typingElement) return;
@@ -186,13 +187,15 @@ function type() {
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const body = document.body;
 
-toggleSwitch.addEventListener('change', function(e) {
-    if (e.target.checked) {
-        body.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-    }
-});
+if (toggleSwitch) {
+    toggleSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+        }
+    });
+}
 
 const hiddenElements = document.querySelectorAll('.hidden');
 const observer = new IntersectionObserver((entries) => {
@@ -207,12 +210,12 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 function openModal() {
     const modal = document.getElementById("certModal");
-    modal.style.display = "block";
+    if (modal) modal.style.display = "block";
 }
 
 function closeModal() {
     const modal = document.getElementById("certModal");
-    modal.style.display = "none";
+    if (modal) modal.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
